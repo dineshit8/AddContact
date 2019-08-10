@@ -1,0 +1,327 @@
+body
+{
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  #root
+  {
+    .wrapper
+    {
+      margin: 10px auto;
+      width: 95%;
+      user-select: none;  
+      background: #f5f5f5;
+      height: 100%;
+      .bodyContainer
+      {
+        padding: 10px;
+        box-sizing: border-box;
+        .leftContainer , .rightContainer
+        {
+          width: 48%;
+          display: inline-block;
+          float: left;
+        }
+        .leftContainer
+        {
+          background: #ffb6c1;
+          padding: 5px;
+          box-sizing: border-box;
+          .header
+          {
+            .headerTitle
+            {
+              position: relative;
+              font-size: 34px;
+              padding-left: 40px;
+              line-height: 34px;
+              box-sizing: border-box;
+              height: 34px;
+              &::before
+              {
+                content: "";
+                background-image: url('../img/contactIcon.png');
+                position: absolute;
+                width: 34px;
+                height: 34px;
+                background-size: 34px;     
+                left: 0px;
+                top: 0px;       
+              }
+            }
+          }
+          .addContainer
+          {
+            padding: 10px;
+            text-align: center;
+            .addBtnCont
+            {
+              &::before
+              {
+                content: '+';
+                position: absolute;
+                font-size: 20px;
+                left: 10px;
+                line-height: 20px;
+              }
+              .addbutton
+              {
+                line-height: 20px;
+                padding-left: 10px;
+              }
+            }
+          }
+          .listContainer
+          {
+            .contactListCont
+            {
+              font-family: sans-serif;
+              display: table;
+              padding: 10px 5px;
+              width: calc(100% - 10px);
+              &:nth-child(odd)
+              {
+                background: #fffaf0;
+              }
+              &:nth-child(even)
+              {
+                background: #b0e0e6;
+              }
+              .name , .company
+              {
+                padding-left: 15px;
+              }
+              .name 
+              {
+                width: 60%;
+                span 
+                {
+                  text-overflow: ellipsis;
+                  width: 178px;
+                  overflow: hidden;
+                  display: block;
+                }
+              }
+              .mail
+              {
+                font-size: 12px;
+                color: #2f4f4f;
+              }
+              .company
+              {
+                text-transform: capitalize;
+              }
+              .editIcon
+              {
+                background: url('../img/edit.png') no-repeat;
+                width: 24px;
+                height: 24px;
+                background-size: 24px;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+        .rightContainer
+        {
+          padding: 5px;
+          box-sizing: border-box;
+          .viewContact
+          {
+            padding: 20px;
+            background: #87cefa;
+            .logoContainer
+            {
+              width: 100%;
+              text-align: center;
+              .nameLogo
+              {
+                 cursor: auto;
+                 margin: 0 auto;
+                 background: #fff;
+              } 
+            }
+            .valuetable
+            {
+              margin: 20px 0px;
+              .table-list
+              {
+                padding: 10px;
+                text-align: center;
+                .label , .value
+                {
+                  display: inline-block;
+                  width: 48%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #form
+  {
+    user-select: none;
+    .formContainer
+    {
+      padding: 20px;
+      box-sizing: border-box;
+      height: inherit;
+      overflow: auto;
+      .form-header
+      {
+        height: 50px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 20px;
+        padding: 15px;
+        box-sizing: border-box;
+      }
+      .inputBox
+      {
+        width: 100%;
+        padding: 10px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        &::placeholder
+        {
+          text-transform: capitalize;
+        }
+      }
+      .submit_cont , .reset_cont
+      {
+        height: 50px;
+        display: inline-block;
+        width: 46%;
+        text-align: center;
+        margin: 0px 2%;
+        outline: none;
+      }
+      .btn_cont
+      {
+        margin: 10px;
+      }
+    }
+  }
+}
+.verticalAlign
+{
+  display: table-cell;
+  vertical-align: middle;
+}
+@media screen and (max-width : 767px) and (min-width : 0px)
+{
+  body 
+  {
+    #root 
+    {
+      .wrapper
+      {
+        .bodyContainer
+        {
+          padding: 5px 0px;
+          .leftContainer , .rightContainer
+          {
+            width: 100%;
+          }
+        .rightContainer
+        {
+          .viewContact
+          {
+            .valuetable
+            {
+              .table-list
+              {
+                box-sizing: border-box;
+                .label , .value
+                {
+                  width: 100%;
+                  padding: 5px 0px;
+                }
+                .label
+                {
+                  text-decoration: underline;
+                }
+                .value
+                {
+                  font-style: italic;
+                }
+              }
+            }
+          }
+        }
+        }
+      }
+    }
+    #form
+    {
+      .formContentWrapper
+      {
+        width: 95%;
+        max-height: 420px;
+        .btn_cont
+        {
+          box-sizing: border-box;
+            .btn
+            {
+              width: 100%;
+              font-size: 16px;
+            }
+        }
+      }
+    }
+  }
+}
+
+
+
+.btn{
+  width: 150px;
+  height: 35px;
+  padding: 5px 0px;
+  background: blueviolet;
+  color: #fff;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  line-height: 20px;
+  box-sizing: border-box;
+  outline: none;
+}
+.nameLogo
+{
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 18px;
+  background: pink;
+  display: table;
+  cursor: pointer;
+  span 
+  {
+    display: table-cell;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+}
+.redAlert 
+{
+  border: 1px solid red !important;
+}
+#alert
+{
+  display: none;
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
